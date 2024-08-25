@@ -1,5 +1,7 @@
 import React from 'react';
 import ParticlesComponent from "../components/Particles";
+import Image from 'next/image';
+import small_logo from '../public/images/small_logo.png';
 
 export default function AboutPage() {
   return (
@@ -7,9 +9,18 @@ export default function AboutPage() {
       {/* Particles Effect */}
       <ParticlesComponent />
 
-      <h1 className="text-4xl font-bold text-center text-primary mb-6">
-        About <span className="text-blue-500">CodeWrench Studios</span>
-      </h1>
+      <div className="flex justify-center items-center mb-6">
+        <h1 className="text-4xl font-bold text-center text-primary">
+          About <span className="text-blue-500">CodeWrench Studios</span>
+        </h1>
+        <Image
+          src={small_logo}
+          alt="CodeWrench Studios Logo"
+          width={50}
+          height={50}
+          className="ml-2"
+        />
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto space-y-6 bg-opacity-60 bg-black p-8 rounded-md">
         <p className="text-lg text-gray-100">

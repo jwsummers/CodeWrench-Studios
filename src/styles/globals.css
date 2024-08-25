@@ -20,6 +20,9 @@ html {
 
 h1 {
   font-family: 'Orbitron', sans-serif;
+  text-shadow: 
+  0 0 2px #ddd,
+  0 0 5px #00b4d8;
 }
 
 
@@ -121,7 +124,7 @@ nav .nav-link:hover::before {
 }
 
 .btn-primary {
-  background-color: #00b4d8;
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
@@ -130,11 +133,11 @@ nav .nav-link:hover::before {
 }
 
 .btn-primary:hover {
-  background-color: #0077b6;
+  background: linear-gradient(135deg, #0077b6, #005f8e);
 }
 
 .btn-secondary {
-  background-color: #333;
+  background: linear-gradient(135deg, #333, #cacaca);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
@@ -143,9 +146,10 @@ nav .nav-link:hover::before {
 }
 
 .btn-secondary:hover {
-  background-color: #555;
+  background: linear-gradient(135deg, #cacaca, #777);
 }
 
+
 #contact {
-  padding-top: 150px; /* Adjust this value as needed */
+  padding-top: 150px;
 }
