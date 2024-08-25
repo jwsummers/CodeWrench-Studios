@@ -11,7 +11,7 @@ export default function ServicesPage() {
         <div className="bg-black bg-opacity-60 p-6 rounded-lg shadow-lg">
           <h2 className="text-3xl font-bold text-blue-500">Web Development</h2>
           <p className="mt-4 text-lg text-gray-100">
-            I offer comprehensive full-stack web development services, tailored to meet your specific needs. From responsive front-end designs to robust back-end systems, I create websites and applications that are not only visually striking but also highly functional and user-friendly. Whether you're looking for a sleek portfolio site, a dynamic web app, or an e-commerce platform, I&apos;ve got you covered.
+            I offer comprehensive full-stack web development services, tailored to meet your specific needs. From responsive front-end designs to robust back-end systems, I create websites and applications that are not only visually striking but also highly functional and user-friendly. Whether you&apos;re looking for a sleek portfolio site, a dynamic web app, or an e-commerce platform, I&apos;ve got you covered.
           </p>
         </div>
 
