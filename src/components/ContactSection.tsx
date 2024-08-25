@@ -40,7 +40,7 @@ const Contact = () => {
           Get in Touch
         </h1>
         <p className="text-lg text-gray-100 mb-6 text-center">
-          I’d love to hear from you! Whether you have a question about services, pricing, or anything else, my inbox is always open. I’m here to help and look forward to working together on your next project.
+          I&apos;d love to hear from you! Whether you have a question about services, pricing, or anything else, my inbox is always open. I&apos;m here to help and look forward to working together on your next project.
         </p>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
