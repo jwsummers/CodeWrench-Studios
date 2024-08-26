@@ -99,6 +99,13 @@ nav .nav-link:hover::before {
   height: 100vh;
 }
 
+@media (max-width: 768px) {
+  .bg-hero-parallax {
+    background-size: contain;
+    background-position: top;
+  }
+}
+
 .bg-opacity-50 {
   background-color: rgba(0, 0, 0, 0.8);
 }
