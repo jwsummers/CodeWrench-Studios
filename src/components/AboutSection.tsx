@@ -28,7 +28,7 @@ export default function AboutPage() {
             </p>
 
             <p className="text-lg mt-4">
-              At CodeWrench Studios, my mission is to deliver impactful digital solutions tailored to your needs. Whether you're looking to establish an online presence, enhance user experience, or optimize for performance, I'm dedicated to making your vision a reality. Let's collaborate to build something exceptional.
+              At CodeWrench Studios, my mission is to deliver impactful digital solutions tailored to your needs. Whether you&apos;re looking to establish an online presence, enhance user experience, or optimize for performance, I&apos;m dedicated to making your vision a reality. Let&apos;s collaborate to build something exceptional.
             </p>
 
             <a
