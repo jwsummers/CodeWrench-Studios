@@ -2,134 +2,125 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply text-gray-900 bg-gray-100;
-}
-
-.btn-primary {
-  @apply bg-primary text-white font-bold py-2 px-4 rounded-lg;
-}
-
-.btn-secondary {
-  @apply bg-secondary text-black py-2 px-4 rounded-lg;
-}
-
-html {
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #121212;
+  color: #e0e0e0;
   scroll-behavior: smooth;
+  @apply text-gray-900;
+}
+
+nav a:hover {
+  color: #00b4d8;
+  text-decoration: underline;
+  text-shadow: 0 0 2px #cacaca, 0 0 4px #00b4d8;
+  transform: scale(1.2);
 }
 
 h1 {
   font-family: 'Orbitron', sans-serif;
   text-shadow: 
-  0 0 2px #ddd,
-  0 0 5px #00b4d8;
+    0 0 2px #ddd,
+    0 0 5px #00b4d8;
 }
 
-
-body {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-.section-scroll-margin {
-  scroll-margin-top: 90px;
-}
-
-nav {
-  background-color: #1f1f1f;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-nav .nav-link {
-  position: relative;
-  color: #e0e0e0;
-  font-size: large;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav .nav-link::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #00b4d8;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
-}
-
-nav .nav-link:hover {
-  color: #00b4d8;
-}
-
-nav .nav-link:hover::before {
-  visibility: visible;
-  transform: scaleX(1);
-}
-
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* Mobile Menu Styles */
-@media (max-width: 768px) {
-  .nav-link {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease-in-out;
-  }
-
-  .nav-link:hover {
-    color: #00b4d8;
-  }
-}
-
-.bg-hero-parallax {
-  background-image: url('../public/images/hero-background.png');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+#about {
+  background: linear-gradient(135deg, #1b1e44, #000000);
   height: 100vh;
+  width: 100%;
 }
 
-@media (max-width: 768px) {
-  .bg-hero-parallax {
-    background-size: contain;
-    background-position: top;
-  }
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.bg-opacity-50 {
-  background-color: rgba(0, 0, 0, 0.8);
+.hero-card-outer {
+  position: relative;
+  margin: 0 auto;
+  width: 70%;
+  height: 70%;
+  border-radius: 10px;
+  z-index: 2;
 }
 
-#tsparticles {
+.hero-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  border-radius: 12px;
+  background: #121212;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-card-inner::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  background: url('../public/images/hero-card-bg.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1;
+  border-radius: 12px;
 }
 
-#hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
+/* Animated Border Effect */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
-
-.text-primary {
-  color: #00b4d8;
+.hero-card-outer::after, .hero-card-outer::before {
+  content: '';
+  position: absolute;
+  height: calc(100% + 2px);
+  width: calc(100% + 2px);
+  background-image: conic-gradient(
+    from var(--angle),
+    #0077b6,
+    #00b4d8,
+    #1b1e44,
+    #333,
+    #0077b6
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 1.2px;
+  border-radius: 12px;
+  animation: spin 3s linear infinite;
 }
 
+.hero-card-outer::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+  z-index: -2;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Buttons */
 .btn-primary {
   background: linear-gradient(135deg, #00b4d8, #0077b6);
   color: white;
@@ -157,6 +148,35 @@ nav .nav-link:hover::before {
 }
 
 
-#contact {
-  padding-top: 150px;
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden-before-fade {
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out 1s forwards;
+}
+
+.fade-in-delayed {
+  animation: fadeIn 1s ease-out 2s forwards;
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(to right, #000000, #1b1e44, #000000);
+}
+
+.bg-opacity-90 {
+  background-color: rgba(0, 0, 0, 0.9);
 }

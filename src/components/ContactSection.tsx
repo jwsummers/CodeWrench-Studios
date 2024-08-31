@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import ParticlesComponent from "../components/Particles";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -31,10 +30,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative container mx-auto p-8 section-scroll-margin pt-8">
-      {/* Particles Effect */}
-      <ParticlesComponent />
-
+    <section id="contact" className="relative bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 text-white py-16">
+      <div className="border-t-4 border-blue-500 mb-12 mx-auto max-w-4xl"></div>
       <div className="relative z-10 max-w-4xl mx-auto bg-black bg-opacity-60 p-8 rounded-md">
         <h1 className="text-4xl font-bold text-center text-primary mb-8">
           Get in Touch
